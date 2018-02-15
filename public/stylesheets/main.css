@@ -1,0 +1,144 @@
+h2{
+	padding: 40px;
+}
+@font-face{
+  font-family: "bold";
+  src : url("../police/theboldfont.ttf");
+}
+
+
+@font-face{
+  font-family: "raleway";
+  src : url("../police/Raleway/Raleway-ExtraLight.ttf");
+}
+h3{
+	font-weight: bold;
+	font-size: 20px;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+a:hover{
+	color: inherit;
+}
+body{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  margin: 0px auto;
+  font-family: raleway;
+}
+
+div{
+  box-sizing: border-box;
+}
+body>div{
+	margin: 0px auto;
+}
+.body{
+  margin: 0px 10% 0px;
+}
+.timeline{
+
+}
+.main{
+  width: 100%;
+  height: 100%;
+  background: #f07e51;
+  color: white;
+  padding: 30px;
+}
+.information{
+  padding: 5px 20px;
+}
+.bullet{
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  background: #9b9b9b;
+  position: absolute;
+  left: 13%;
+}
+.timeline_item{
+  padding: 20px;
+  margin: 20px 20px 5px;
+  background: #abaaaa;
+}
+.timeline_item>a{
+  display: block;
+  position: relative;
+}
+.content{
+  margin: 0px 50px;
+  border-left: 1px dashed #9b9b9b;
+  padding: 20px 0px;
+}
+.timeline_essence_item:nth-child(2){
+  border-right: 1px dashed white;
+  border-left: 1px dashed white;
+}
+.timeline_essence_item{
+  width: 33%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+.active_bullet{
+  background: #f07e51;
+}
+.active_timeline h3{
+  color: white;
+}
+body>div{
+  position: absolute;
+}
+.ligthbox{
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none;
+}
+.ligthbox_content{
+  margin: 2%;
+  background: white;
+  height: 96%;
+}
+.ligthbox_header{
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid grey;
+}
+.ligthbox_header_text{
+  width: 90%;
+}
+.ligthbox_header_close{
+  width: 9%;
+  text-align: right;
+}
+.ligthbox_header>span{
+  display: inline-block;
+}
+.ligthbox_header_close{
+  cursor: pointer;
+}
+.btn-default{
+  padding: 10px 20px;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-primary{
+  width: 150px;
+  padding: 10px 20px;
+  left: 100px;
+  border-radius: 2px;
+  background: #f07e51;
+  position: relative;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

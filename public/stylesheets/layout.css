@@ -1,0 +1,134 @@
+/*
+* Markov cahe 1.0.0
+* Author : LTPhen ; 
+* Licence : .... ;
+* Description : An application for IA in the web;
+* copyright LtphenApps2017 
+*/
+
+
+.col-s12{
+	width: 100%;
+}
+
+.col-s11{
+	width: 94.5%;
+}
+
+.col-s10{
+	width: 83%;
+}
+
+.col-s9{
+	width: 75%;
+}
+
+.col-s8{
+	width: 66%;
+}
+
+.col-s7{
+	width: 58%;
+}
+
+.col-s6{
+	width: 50%;
+}
+
+.col-s5{
+	width: 44.4%;
+}
+
+.col-s4{
+	width: 33%;
+}
+
+.col-s3{
+	width: 25%;
+}
+
+.col-s2{
+	width: 16%;
+}
+.col-s1{
+	width: 8%;
+}
+.col-s1, .col-s2, .col-s3, .col-s4, .col-s5, .col-s6, .col-s7, .col-s8, .col-s9, .col-s10, .col-s11, .col-s12{
+  position: relative;
+  float: left;
+}
+
+.hg-s12{
+  height: 100%;
+}
+
+.hg-s11{
+  height: 91.3%;
+}
+
+.hg-s10{
+  height: 83%;
+}
+
+.hg-s9{
+  height: 75%;
+}
+
+.hg-s8{
+  height: 66%;
+}
+
+.hg-s7{
+  height: 58%;
+}
+
+.hg-s6{
+  padding: 120px 10px;
+}
+
+.hg-s5{
+    padding: 60px 10px;
+}
+
+.hg-s4{
+  padding: 10px 10px;
+}
+
+.hg-s3{
+  padding: 30px 10px;
+}
+
+.hg-s2{
+  padding: 24.5px 10px;
+}
+.hg-s1{
+  height: 8%;
+}
+.image-circle-s6{
+  width: 100px;
+  height: 100px;
+}
+.last-bloc{
+  width: 31%;
+}
+
+@media(max-width: 1423px){
+  .great-bloc{
+    width: 45%;
+    float: left;
+  } 
+
+  .col-s4 .great-bloc{
+    width: 50%;
+  }
+  .one-container{
+    width: 200% !important;
+  }
+  .first-bloc{
+    width: 100%;
+  }
+  body{
+    overflow-x: hidden;
+  }
+  
+}
