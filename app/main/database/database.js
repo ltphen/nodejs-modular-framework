@@ -1,42 +1,21 @@
 var Database = function () {
-	this.sql = require('mysql');
 	this.config = require('./../config/config');
-	this.connection = this.sql.createConnection({
-		host : this.config.get("db_host"),
-		user : this.config.get("db_user"),
-		password : this.config.get("db_pass"),
-		database : this.config.get("db_name")
-	});
-	this.connection.connect(function(error){
-		if (error) {
-			console.log(" There was some trouble "+ error);
-			return;
+	this.knex = require('knex')({
+		client: 'mysql',
+		connection: {
+		   	host : this.config.get("db_host"),
+			user : this.config.get("db_user"),
+			password : this.config.get("db_pass"),
+			database : this.config.get("db_name")
 		}
 	});
 }
 
 /**
-* @params statement String the SQL statement
-* @params attributes Array evantual request attributes
-* @return Promise
+* @return knex instance
 */
-Database.prototype.query = function(statement, attributes) {
-	var that = this;
-	return new Promise(function (resolve, reject) {
-		if (attributes == null) {
-			that.connection.query(statement, function(error, result, fields){
-				if (error) { reject(error)}
-				resolve(result);
-			})
-		}else{
-			that.connection.query(statement, attributes, function(error, result, fields){
-				if (error) { reject(error)}
-				resolve(result);
-			})
-		}
-	});
+Database.prototype.knex = function() {
+	return this.knex;
 };
-
-
 
 module.exports = new Database();

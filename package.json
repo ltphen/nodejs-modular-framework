@@ -11,7 +11,9 @@
     "test": "mocha --recursive"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "4.15.2",
+    "knex": "^0.14.3",
     "mysql": "^2.15.0"
   },
   "devDependencies": {
