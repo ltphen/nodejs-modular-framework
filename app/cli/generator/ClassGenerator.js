@@ -1,3 +1,11 @@
+/**
+*
+* Generator 
+* the class for generating class (models, comtroller, middleware)	
+*
+* @author ltphen
+*
+**/
 var Generator = function () {
 	this.fs = require("fs");
 	this.help = require('./../../others/helpers/string');
@@ -11,6 +19,10 @@ var Generator = function () {
 	
 }
 
+/**
+* @params name String the type name of the class we will generate (model => model)
+* generate the file after reading the modeles
+*/
 Generator.prototype.generate = function(name) {
 
 	var self = this;
@@ -36,6 +48,12 @@ Generator.prototype.generate = function(name) {
 
 
 };
+
+/**
+* @params name String the type name of the class we will generate (model => model)
+* @params fn Function the callback function
+* read a modele then personalize it
+*/
 
 Generator.prototype.read = function(name, fn) {
 	var self = this;

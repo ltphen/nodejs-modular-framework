@@ -2,7 +2,7 @@ var Controller = function(module) {
 	this.model = require("./../models/model");
 	this.modulesFolder = "./../../modules/";
 	this.helper = require("./../../others/helpers/string");
-	this.currentModule =  module == null ? "core" : module ;
+	this.currentModule =  module == null ? "core" : module;
 	this.success = "success";
 	this.error = "error";
 }

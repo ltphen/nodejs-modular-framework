@@ -11,16 +11,14 @@ var Modules = function() {
 */
 Modules.prototype.getModule = function(moduleName) {
 	try{
-		var Route = require(this.modulesFolder+moduleName + "/routing/routing");
 		return {
 			controller : new this.Controller(moduleName),
 			middleware : new this.Middleware(moduleName),
 			model : new this.Model(moduleName),
-			routes :  new Route().express()
 		};
 	} catch (e){
 		// should log something here
-		console.log("Have failed"+e);
+		console.log(" Have failed "+e);
 	}
 };
 
