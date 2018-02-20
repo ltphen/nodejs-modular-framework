@@ -31,7 +31,6 @@ ModuleGenerator.prototype.generate = function() {
 			    	throw error;  
 			    	return; 	
 			    } 
-		    });
 			self.create("models", readResult.answer);
 			self.create("controllers", readResult.answer);
 			self.create("middlewares", readResult.answer);
@@ -58,6 +57,8 @@ ModuleGenerator.prototype.generate = function() {
 				console.log('\nThe module has been created successfully!\n');
 
 			self.request.close();
+		    });
+			
 		}
 		catch(e){
 			console.log("[ ERROR ! ] It seems like this module already exist");
