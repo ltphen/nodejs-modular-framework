@@ -1,14 +1,23 @@
+process.on('uncaughtException', (err) => {
+ 	console.log(" uncaughtException   ===>  ",err);
+});
+
+
 try{
-	var modules = require("./app/generic/modules/modules");
-	var app = require('express')();
-	app.use("/forum", modules.getRoutes("forum"));
 
-	app.listen(3000, () => {
-	  console.log('App listening on port 3000');
-	});
+	let a = require('./app/modules/forum/controllers/controllerForum');
 
+
+	let modules = require("./app/generic/modules/modules");
+
+	var b = modules.getModule('forum').controller;
+
+	let c = b.getInstanceOf("forum");
+
+	 
+	c.forumAndLastUsbject();
 
 }
 catch (e){
-	console.log("error"+e);
+	console.log(" Error  : "+e);
 }

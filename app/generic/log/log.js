@@ -7,8 +7,8 @@ var Log = function() {
 }
 
 /**
-* @params logType String the name of the folder we have to write in (example : commom)
-* @params data the data to write in the log
+* @params logType { String } the name of the folder we have to write in (example : commom)
+* @params data { any } the data to write in the log
 */
 
 Log.prototype.write = function(logType, data) {

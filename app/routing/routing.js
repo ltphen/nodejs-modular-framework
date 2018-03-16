@@ -1,9 +1,10 @@
 var Routing = function () {
-	this.app = 	require('express')()
-	this.controller = require('./../generic/modules/modules'),
+	this.express = require('express');
+	this.app = 	this.express();
+	this.modules = require("./../generic/modules/modules");
 	this.config = require('./../main/config/config');
-    // this.middleware = require('./../middleware/middleware');
-    routing.boostrap();
+	this.crossorigin = this.modules.getShared().middleware.getInstanceOf('cors');
+
 }
 
 
@@ -14,23 +15,37 @@ var Routing = function () {
 */
 Routing.prototype.boostrap = function() {
 
-	var that = this;
+	var that = this, path = require('path');
+	
+	this.enabledCors();
 
 	this.app.set('port', (this.config.get("env.PORT") || 5000));
 
-	// this.app.use(this.middleware.accessToken());
+	const fileUpload = require('express-fileupload');
 
-	// this.app.get('/notes', function(request, response) {
-	// 	that.controller.getController('notes').all(function (result) {
-	// 		response.send(result);
-	// 	});
-	// });
+	var morgan = require('morgan');
 
-	// this.app.get('/notes/:id', function(request, response) {
-	//  	that.controller.getController('notes').one(request.params.id, function (result) {
-	// 		response.send(result);
-	// 	})
-	// });
+ 	this.app.disable("x-powered-by");
+
+	this.app.use(morgan('combined'))
+
+	this.app.use(fileUpload());
+
+	this.app.use(this.crossorigin.manuelCors());
+
+	this.app.use("/forum", this.modules.getRoutes("forum"));
+
+	this.app.use("/account", this.modules.getRoutes("account"));
+
+	this.app.use('/files', this.express.static(path.join(__dirname, '../../public')))
+	
+	this.app.use(function(err, req, res, next) {
+		if (err) {	
+		    res.status(err.status || 500);
+		    res.send(err.message);
+		}
+		next();
+	});
 
 	this.app.listen(this.app.get('port'), function() {
 	  console.log('Node app is running on port', that.app.get('port'));
@@ -41,5 +56,17 @@ Routing.prototype.boostrap = function() {
 Routing.prototype.express = function() {
 	return this.app;
 };
+
+Routing.prototype.enabledCors = function() {
+	var cors = require('cors');
+	var corsOption = {
+	    origin: true,
+	    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+	    credentials: true,
+	    exposedHeaders: ['authorisation']
+	};
+	this.app.use(cors());
+};
+
 
 module.exports = new Routing();

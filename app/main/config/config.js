@@ -38,6 +38,20 @@ Config.prototype.getSingle = function(key) {
 	return null;
 };
 
+
+/**
+* @params key String the key we have to get the value
+* @return any 
+*/
+
+Config.prototype.getDirect = function(key) {
+	
+	if(this.config.hasOwnProperty(key)) {
+		return this.config[key];
+	}
+	return null;
+};
+
 /**
 * @params key String the key we have to get the value
 * @return any 

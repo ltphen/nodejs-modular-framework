@@ -3,6 +3,8 @@ var Modules = function() {
 	this.Model = require("./../models/model");
 	this.modulesFolder = "./../../modules/";
 	this.Middleware = require("./../middlewares/middleware");
+	this.config = require('./../../main/config/config');
+
 }
 
 /**
@@ -15,6 +17,8 @@ Modules.prototype.getModule = function(moduleName) {
 			controller : new this.Controller(moduleName),
 			middleware : new this.Middleware(moduleName),
 			model : new this.Model(moduleName),
+			config : this.config,
+			shared : require(this.modulesFolder+"shared/main/main")
 		};
 	} catch (e){
 		// should log something here
@@ -31,5 +35,15 @@ Modules.prototype.getRoutes = function(moduleName) {
 	var Route = require(this.modulesFolder+moduleName+"/routing/routing");
 	return new Route().express();
 };
+
+/**
+* @params ModuleName String the name of the module (example : modules/account=> account)
+* @return  of the module
+*/
+Modules.prototype.getShared = function() {
+	return require(this.modulesFolder+"shared/main/main");
+};
+
+
 
 module.exports = new Modules();

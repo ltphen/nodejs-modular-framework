@@ -8,7 +8,7 @@ var Controller = function(module) {
 }
 
 /**
-* @params controllerName String the name of the controller (example : ControllerFoo => foo)
+* @params controllerName { String } the name of the controller (example : ControllerFoo => foo)
 */
 Controller.prototype.getInstanceOf = function(controllerName) {
 	var classController = require(this.modulesFolder+this.currentModule+"/controllers/controller"+this.helper.capitalize(controllerName));
@@ -23,9 +23,9 @@ Controller.prototype.getViewsFile = function() {
 };
 
 /**
-* @params method Function The function to execute before promise
-* @params fn Funtion The function to excetute after promise
-* @params attributes Array eventually the attributes of the databse request
+* @params method { Function } The function to execute before promise
+* @params fn { Function } The function to excetute after promise
+* @params attributes { Array } eventually the attributes of the databse request
 */
 Controller.prototype.addStatus = function(result, fn) {
 		if (result != null && result.length != 0) {
@@ -36,14 +36,15 @@ Controller.prototype.addStatus = function(result, fn) {
 			fn(result);
 		}else{
 			result = new Object({
-				status : this.error
+				status : this.success,
+				data : null
 			});
 			fn(result);
 		}
 };
 
 /**
-* @params fn Funtion The function to excetute after promise
+* @params fn Funtion The { Function } to excetute after promise
 */
 Controller.prototype.badStatus = function(fn) {
 	result = new Object({
@@ -53,7 +54,7 @@ Controller.prototype.badStatus = function(fn) {
 };
 
 /**
-* @params fn Funtion The function to excetute after promise
+* @params fn Funtion The { Function } to excetute after promise
 */
 Controller.prototype.goodStatus = function(result, fn) {
 	var result = new Object({

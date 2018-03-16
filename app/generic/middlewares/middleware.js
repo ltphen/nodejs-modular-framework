@@ -9,7 +9,8 @@ var Middleware = function(module) {
 * @params MiddlewareName String the name of the Middleware (example : MiddlewareFoo => foo)
 */
 Middleware.prototype.getInstanceOf = function(MiddlewareName) {
-	return require(this.modulesFolder+this.currentModule+"/middlewares/middleware"+this.helper.capitalize(MiddlewareName));
+	var classMiddleware = require(this.modulesFolder+this.currentModule+"/middlewares/middleware"+this.helper.capitalize(MiddlewareName));
+	return new classMiddleware(this);
 };
 
 module.exports = Middleware;
