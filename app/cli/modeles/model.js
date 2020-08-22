@@ -1,17 +1,19 @@
-var {{ModelName}} = function (parent) {
-	this.parent = parent;
-	this.module = require('./../main/main');
-	
+class {{ModelName}} {
+    constructor(parent) {
+        this.parent = parent;
+        this.module = require('./../main/main');
+        
+    }
+
+    /**
+    * @params params Type description
+    */
+
+    method() {
+
+        // your code here
+        
+    }
 }
 
-/**
-* @params params Type description
-*/
-
-{{ModelName}}.prototype.method = function() {
-
-	// your code here
-	
-};
-
-module.exports =  {{ModelName}};
+export default {{ModelName}};

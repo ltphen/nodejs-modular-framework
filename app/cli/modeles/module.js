@@ -1,3 +1,2 @@
-var modules = require("./../../../generic/modules/modules");
-
-module.exports = modules.getModule("{{ModuleName}}");
+import modules from "./../../../generic/modules/modules";
+export default modules.getModule("{{ModuleName}}");

@@ -1,22 +1,21 @@
-var middlewareCors = function (parent) {
-	this.parent = parent;
-	this.module = require('./../main/main');
-	
+class middlewareCors {
+    constructor(parent) {
+        this.parent = parent;
+        this.module = require('./../main/main');
+        
+    }
+
+    /**
+    * @params params Type description
+    */
+
+    manuelCors() {
+        return (req, res, next) => {
+          res.header("Access-Control-Allow-Origin", "*");
+          res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+          next();
+        };
+    }
 }
 
-/**
-* @params params Type description
-*/
-
-middlewareCors.prototype.manuelCors = function () {
-
-	return function(req, res, next) {
-	  console.log("i'm the cors here ");
-	  res.header("Access-Control-Allow-Origin", "*");
-	  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	  next();
-	}
-};
-
-
-module.exports = middlewareCors;
+export default middlewareCors;

@@ -1,3 +1,3 @@
-var g = require('./ModuleGenerator');
+import g from './ModuleGenerator';
 
 g.generate();

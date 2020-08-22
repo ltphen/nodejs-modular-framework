@@ -4,12 +4,15 @@
 * ENV
 * ...
 */
-module.exports = {
+export default {
 	database : {
-		db_name : "forum",
+		db_name : "elevage",
 		db_host : "localhost",
 		db_user : "root",
-		db_pass : "root"
+		db_pass : ""
+	},
+	api : {
+		version: 'v1'
 	},
 	env : {
 		PORT : 8000,
@@ -22,20 +25,27 @@ module.exports = {
 
 	jwt : {
 		secret : "PASDEPASSWORD",
-		expiredTime : "1h"
+		expiredTime : "24h"
 	},
 	mail : {
 	    config : {
-	    	host: 'smtp.ethereal.email',
-		    port: 587,
-		    auth: {
-		        user: 'vb26llg4uzfshhie@ethereal.email',
-		        pass: 'GthaXwxS9WUsNbfEcK'
-		    }
+			host: 'smtp.googlemail.com', // Gmail Host
+			port: 465, // Port
+			secure: true, // this is true as port is 465
+			// auth: {
+			// 	user: 'GMAIL_USERNAME', //Gmail username
+			// 	pass: 'GMAIL_PASSWORD' // Gmail password
+			// }
+				auth: {
+					   user: 'andrerene905@gmail.com',
+					   pass: 'andrerene'
+				   }
 	    },
 	    option : {
 	    	from: '"Fred Foo 👻" <foo@example.com>', // sender addres
 	    }
-	}
+	},
+
 	
-}
+	
+};

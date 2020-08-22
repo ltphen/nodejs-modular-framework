@@ -5,6 +5,6 @@
 * ths boostrap Function call routing modules and more
 */
 
-var application = require("./app/routing/routing.js");
+require("./app/routing/routing.js");
 
-application.boostrap();
+

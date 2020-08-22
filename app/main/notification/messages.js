@@ -1,8 +1,18 @@
-import config from "./../../../config/config.js";
+import messages from "./../../../config/messages";
 
-class Config {
+class Messages {
     constructor() {
-        this.config = config;
+        this.messages = messages;
+        this.lang = "fr";
+    }
+
+    /**
+    * @params key String the key we have to get the value
+    * @return any 
+    */
+
+    setLang(val) {
+        this.lang = val
     }
 
     /**
@@ -23,9 +33,20 @@ class Config {
     * @return any 
     */
 
+    retrieve(key) {
+        key = `${this.lang}.${key}`;
+            return this.getMultiple(key);
+        
+    }
+
+    /**
+    * @params key String the key we have to get the value
+    * @return any 
+    */
+
     getSingle(key) {
-        for(item in this.config){
-            const current = this.config[item];
+        for(item in this.messages){
+            const current = this.messages[item];
             if (typeof(current) == "object") {
                 if (item == key) {
                     return current;
@@ -46,8 +67,8 @@ class Config {
 
     getDirect(key) {
         
-        if(this.config.hasOwnProperty(key)) {
-            return this.config[key];
+        if(this.messages.hasOwnProperty(key)) {
+            return this.messages[key];
         }
         return null;
     }
@@ -59,12 +80,12 @@ class Config {
 
     getMultiple(content) {
         const parts = content.split(".");
-        let objectValue = this.config[parts[0]];
+        let objectValue = this.messages[parts[0]];
         for (let i = 1; i < parts.length; i++) {
             objectValue = objectValue[parts[i]];
         };
-        return objectValue;
+        return objectValue ? objectValue : this.messages[this.lang]["unknown_error"];
     }
 }
 
-export default new Config();
+export default new Messages();
