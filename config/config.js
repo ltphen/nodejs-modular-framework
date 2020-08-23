@@ -24,7 +24,7 @@ export default {
 	},
 
 	jwt : {
-		secret : "PASDEPASSWORD",
+		secret : "rskltni uotuertutyertuyetyo utonghj",
 		expiredTime : "24h"
 	},
 	mail : {
@@ -37,8 +37,8 @@ export default {
 			// 	pass: 'GMAIL_PASSWORD' // Gmail password
 			// }
 				auth: {
-					   user: 'andrerene905@gmail.com',
-					   pass: 'andrerene'
+					   user: 'john.doe@gmail.com',
+					   pass: 'password'
 				   }
 	    },
 	    option : {
