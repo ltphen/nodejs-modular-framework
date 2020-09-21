@@ -4,7 +4,7 @@
 # Installation
 To install use the following command
 ```
-git clone https://gitlab.com/ltphen/chiken.git
+git clone https://github.com/ltphen/nodejs-modular-framework.git
 ```
 then
 ```
