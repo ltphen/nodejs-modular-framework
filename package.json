@@ -28,7 +28,7 @@
     "nodemailer": "^4.6.0",
     "nodemon": "^1.15.0",
     "passport-http-bearer": "^1.0.1",
-    "sharp": "^0.23.0"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
