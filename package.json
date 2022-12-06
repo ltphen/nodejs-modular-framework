@@ -11,11 +11,11 @@
     "test": "mocha --recursive"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.20.1",
     "chai": "^4.1.2",
     "cors": "^2.8.4",
     "crypto-js": "^3.1.9-1",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-fileupload": "^0.4.0",
     "express-jwt": "^5.3.0",
     "g": "^2.0.1",
